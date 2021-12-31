@@ -1,0 +1,20 @@
+{
+    "name": "snippet-rct",
+    "displayName": "react hooks 2022",
+    "description": "\"es un snippet actualizado para react hooks para visual studio code\"",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.63.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "javascript",
+                "path": "./snippets/snippets.code-snippets"
+            }
+        ]
+    }
+}

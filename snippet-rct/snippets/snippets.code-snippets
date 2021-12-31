@@ -1,0 +1,375 @@
+{
+	"Import a exported variable basic": {
+		"prefix": "impo",
+		"description": "Import a exported variable from a library",
+		"body": "import s1 from './$1';\n"
+	},
+	"Import React App": {
+		"prefix": "impr",
+		"body": ["import React from 'react';\n"],
+		"description": "Import React App"
+	},
+
+    "Function Const Hook": {
+		"prefix": "impf",
+		"body": [
+			"import React from 'react';",
+			"",
+			"export default const $1 = ( ) => {",
+			"\treturn ( ",
+			"\t\t<div>",
+			"\t\t\t$1",
+			"\t\t</div>",
+			"\t);",
+			"}",
+		],
+		"description": "Stateless Function Component"
+    },
+
+	"Function Normal Hook": {
+		"prefix": "impff",
+		"body": [
+			"import React from 'react';",
+			"",
+			"export default function $1( ){",
+			"\tconst $1 = () =>{ ",
+			"\t}",
+			"\t",
+			"\treturn ( ",
+			"\t\t<div>",
+			"\t\t\t$1",
+			"\t\t</div>",
+			"\t);",
+			"}",
+		],
+		"description": "Stateless Function hook"
+	},
+
+	"Component UseEffect Hook": {
+		"prefix": "impusef",
+		"body": [
+			"useEffect(() => {",
+			"\t$1",
+			"}, []);"
+		],
+		"description": "Component UseEffect Hook"
+	},
+
+    "Component UseState Hook": {
+		"prefix": "impuset",
+		"body": ["const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState('');\n"],
+		"description": "Declare a new state Variable using useState Hook"
+	},
+	
+	"Component Const Hook": {
+		"prefix": "impcon",
+		"body": [
+			"const $1 = ( ) =>{;",
+			"\t $2",
+			"}"
+		],
+		"description": "Declare a new function Hook"
+	},
+
+	"Component Map Hook": {
+		"prefix": "impmap",
+		"body": [
+			"const n = $1.map( (n) => {",
+			"\treturn("
+			"\t\t<li key={n.toString()}>",
+			"\t\t\t{n}",
+			"\t\t</li>",
+			"\t)",
+			"});"
+		],
+		"description": "Declare a new Map Hook"
+	},
+
+	"Component Array Hook": {
+		"prefix": "imparray",
+		"body": ["const n = ['1', '2', '3'];"],
+		"description": "Declare a new Array Hook"
+	},
+
+	"Code convert to String": {
+		"prefix": ".to",
+		"description": ".toString('');",
+		"body": [".toString('$1');$0"]
+	},
+
+	"Print Alert": {
+		"prefix": "ale",
+		"description": "alert('');",
+		"body": ["alert('$1');$0"]
+	},
+	
+	"Print Alert": {
+		"prefix": "alee",
+		"description": "alert($1.toString());",
+		"body": ["alert( $1.toString() );$0"]
+	},
+	
+	"Print log to console": {
+		"prefix": "clog",
+		"description": "console.log()",
+		"body": ["console.log('$1');$0"]
+	},
+	
+	"Print log with object to console": {
+		"prefix": "clogg",
+		"description": "console.log({})",
+		"body": ["console.log({$1});$0"]
+	},
+
+	"Print warning to console": {
+		"prefix": "clogw",
+		"description": "console.warn()",
+		"body": ["console.warn('$1');$0"]
+	},
+
+	"Print error to console": {
+		"prefix": "cloge",
+		"description": "console.error()",
+		"body": ["console.error('$1');$0"]
+	},
+
+	"Comment basic": {
+		"prefix": "comb",
+		"description": "Comment Simple",
+		"body": ["//----------- $1 -----------$2"]
+	},
+
+	"Comment Multiply": {
+		"prefix": "comm",
+		"description": "Comment Multiply",
+		"body": ["/*----------------------------",
+			"$1",
+			"----------------------------*/"
+		]
+	},
+
+	"Component Navigator React Router" : {
+		"prefix": "imrnav",
+		"description": "useNavigate()",
+		"body": [
+			"import { useNavigate } from 'react-router-dom';",
+			"",
+			"const navigate = useNavigate();"
+		]
+	},
+
+	"Struct React Router" : {
+		"prefix": "imrout",
+		"description": "useNavigate()",
+		"body": [
+			"import React from 'react';",
+			"import { Routes, Route } from 'react-router-dom';",
+			"",
+			"export default function App() {",
+			"\treturn (",
+			"\t\t<>",
+			"\t\t\t<Routes>",
+			"\t\t\t\t<Route path='/' element={<$1 />} /> ",
+			"\t\t\t<Routes>",
+			"\t\t</>",
+			"\t);",
+			"}",
+		]
+	},
+
+    "Import PropTypes": {
+		"prefix": "ccip",
+		"body": ["import PropTypes from 'prop-types';"],
+		"description": "Import PropTypes"
+	},
+
+    "Class Component": {
+		"prefix": "cccc",
+		"body": [
+		  "class $1 extends React.Component {",
+		  "\trender() { ",
+		  "\t\treturn <div>$0</div>;",
+		  "\t}",
+		  "}",
+		  " ",
+		  "export default $1;"
+		],
+		"description": "Class Component"
+	  },
+	
+	  "Class Pure Component": {
+		"prefix": "cccpc",
+		"body": [
+		  "class $1 extends PureComponent {",
+		  "\tstate = { $2 }",
+		  "\trender() { ",
+		  "\t\treturn ( $0 );",
+		  "\t}",
+		  "}",
+		  " ",
+		  "export default $1;"
+		],
+		"description": "Class Pure Component"
+	  },
+	
+	  "Class Component With Constructor": {
+		"prefix": "ccccwc",
+		"body": [
+		  "class $1 extends Component {",
+		  "\tconstructor(props) {",
+		  "\t\tsuper(props);",
+		  "\t\tthis.state = { $2 }",
+		  "\t}",
+		  "\trender() { ",
+		  "\t\treturn ( $0 );",
+		  "\t}",
+		  "}",
+		  " ",
+		  "export default $1;"
+		],
+		"description": "Class Component With Constructor"
+	  },
+	  
+	  "componentDidMount": {
+		"prefix": "cdm",
+		"body": ["componentDidMount() {", "\t$0", "}"],
+		"description": "componentDidMount"
+	  },
+	
+	  "componentWillMount": {
+		"prefix": "ccwm",
+		"body": ["//WARNING! To be deprecated in React v17. Use componentDidMount instead.", "componentWillMount() {", "\t$0", "}"],
+		"description": "componentWillMount"
+	  },
+	
+	  "componentWillReceiveProps": {
+		"prefix": "cccwrp",
+		"body": ["//WARNING! To be deprecated in React v17. Use new lifecycle static getDerivedStateFromProps instead.", "componentWillReceiveProps(nextProps) {", "\t$0", "}"],
+		"description": "componentWillReceiveProps"
+	  },
+	
+	  "getDerivedStateFromProps": {
+		"prefix": "ccgdsfp",
+		"body": ["static getDerivedStateFromProps(nextProps, prevState) {", "\t$0", "}"],
+		"description": "getDerivedStateFromProps"
+	  },
+	
+	  "shouldComponentUpdate": {
+		"prefix": "ccscup",
+		"body": ["shouldComponentUpdate(nextProps, nextState) {", "\t$0", "}"],
+		"description": "shouldComponentUpdate"
+	  },
+	
+	  "componentWillUpdate": {
+		"prefix": "cccwud",
+		"body": ["//WARNING! To be deprecated in React v17. Use componentDidUpdate instead.", "componentWillUpdate(nextProps, nextState) {", "\t$0", "}"],
+		"description": "componentWillUpdate"
+	  },
+	
+	  "componentDidUpdate": {
+		"prefix": "cccdu",
+		"body": ["componentDidUpdate(prevProps, prevState) {", "\t$0", "}"],
+		"description": "componentDidUpdate"
+	  },
+	
+	  "componentWillUnmount": {
+		"prefix": "cccwun",
+		"body": ["componentWillUnmount() {", "\t$0", "}"],
+		"description": "componentWillUnmount"
+	  },
+	
+	  "componentDidCatch": {
+		"prefix": "cccdc",
+		"body": ["componentDidCatch(error, info) {", "\t$0", "}"],
+		"description": "componentDidCatch"
+	  },
+	
+	  "getSnapshotBeforeUpdate": {
+		"prefix": "ccgssbu",
+		"body": ["getSnapshotBeforeUpdate(prevProps, prevState) {", "\t$0", "}"],
+		"description": "getSnapshotBeforeUpdate"
+	  },
+	
+	  "Component this SetState": {
+		"prefix": "ccts",
+		"body": ["this.setState({ $1: $2 });"],
+		"description": "Component SetState"
+	  },
+	
+	  "Functional this setState": {
+		"prefix": "ccfts",
+		"body": ["this.setState(prevState => {", "\treturn { $1: prevState.$1 };", "});"],
+		"description": "Functional setState"
+	  },
+	
+	  "Functional Render Prop": {
+		"prefix": "ccfrp",
+		"body": [
+		  "class $1 extends Component {",
+		  "\tstate = { $2: $3 }",
+		  "\trender() { ",
+		  "\t\treturn this.props.render({",
+		  "\t\t\t$2: this.state.$2",
+		  "\t\t});",
+		  "\t}",
+		  "}",
+		  " ",
+		  "export default $1;"
+		],
+		"description": "Functional Render Prop"
+	  },
+	
+	  "Higher Order Component": {
+		"prefix": "cchoc",
+		"body": [
+		  "function $1($2) {",
+		  "\treturn class extends Component {",
+		  "\t\tconstructor(props) {",
+		  "\t\t\tsuper(props);",
+		  "\t\t}",
+		  " ",
+		  "\t\trender() {",
+		  "\t\t\treturn <$2 {...this.props} $0/>",
+		  "\t\t}",
+		  "\t}",
+		  "}"
+		],
+		"description": "Higher Order Component"
+	  },
+	
+	  "Context Provider": {
+		"prefix": "ccprovider",
+		"body": [
+		  "export const $1 = React.createContext();",
+		  "",
+		  "const $1Provider = (props) => {",
+		  "\t// Initial Provider State",
+		  "\tconst state = {};",
+		  "",
+		  "\t// Reducer Function",
+		  "\tconst $2 = (state, action) => {",
+		  "\t\t",
+		  "\t};",
+		  "",
+		  "\treturn (",
+		  "\t\t<$1.Provider value={{state: state, $2}}>",
+		  "\t\t\t{props.children}",
+		  "\t\t</$1.Provider>",
+		  "\t);",
+		  "}",
+		  "",
+		  "export default $1Provider;"
+		],
+		"description": "Context Provider"
+	  },
+	  
+	  "Class Property Function": {
+		"prefix": "ccprop",
+		"body": [
+		  "$1 = (${2:e${TM_SELECTED_TEXT}}) => {",
+		  "\t $0",
+		  "};"
+		],
+		"description": "Class Property Function"
+	  }
+}
