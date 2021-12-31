@@ -1,6 +1,6 @@
 {
     "name": "snippet-rct",
-    "displayName": "react hooks 2022",
+    "displayName": "snippets react hooks 2022",
     "description": "\"es un snippet actualizado para react hooks para visual studio code\"",
     "version": "0.0.1",
     "engines": {
@@ -16,5 +16,19 @@
                 "path": "./snippets/snippets.code-snippets"
             }
         ]
+    },
+    "icon": "icons/react-2022.png",
+    "author": {
+        "name": "Armando Romero",
+        "email": "armando.romero1153@gmail.com",
+        "url": "https://www.youtube.com/channel/UC9Ff1ypUKX3v6W1tIuGexjg"
+    },
+    "repository": {
+        "url": "https://github.com/armando10rafael10/snippets-react-2022.git",
+        "type": "git"
+    },
+    "publisher": "codigo-tec-arm",
+    "dependencies": {
+        "vsce": "^2.5.1"
     }
 }
